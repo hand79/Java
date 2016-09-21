@@ -1,0 +1,29 @@
+當遇上csrf的保護機制沒有關閉時須使用Get、Post、ajax等方法
+
+jQuery 1.11版本實作
+Post範例: 
+
+--- html add meta for csrf
+<meta name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+$(document).ready(function(){
+  var csrf_token = $("meta[name='_csrf']").attr("content");
+  var csrf_header = $("meta[name='_csrf_header']").attr("content");
+  .......
+  $.ajax({
+		    url: "/test/getData",
+		    type: "POST",
+		    beforeSend: function(xhr) {
+	            xhr.setRequestHeader(csrf_header, csrf_token);  <<<<< 重點加這header
+	        },
+		    data:{user:"test"},
+		    success:function(data) {
+		        ......
+		        success to do anything  
+		    }
+		});
+  
+
+});
