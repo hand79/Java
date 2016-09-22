@@ -1,0 +1,6 @@
+遇上csrf保護開啟時須在form加入以下參數，解決csrf認證問題
+
+<form  method="post" action="<c:url value="/test" />">
+        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        	......
+</form>
