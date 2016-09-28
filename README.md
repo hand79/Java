@@ -2,7 +2,7 @@
 
 # spring roo
 - code
-file path: code/maaxhanchen
+file path: code/maxhanchen
 
 # doc 
 doc
