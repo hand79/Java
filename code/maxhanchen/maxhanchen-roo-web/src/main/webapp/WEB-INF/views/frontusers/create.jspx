@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_maxhanchen_dao_po_FrontUser" modelAttribute="frontUser" path="/frontusers" render="${empty dependencies}" z="N+bDSPKShXO4FfH+jdVoXc1cwQI=">
+        <field:input field="username" id="c_com_maxhanchen_dao_po_FrontUser_username" required="true" z="jPS5W/+b+IJkS7D2sO8F30EuYXA="/>
+        <field:input field="password" id="c_com_maxhanchen_dao_po_FrontUser_password" required="true" z="b2wUURKpWq3Nm30FZCNo1/cI4o4="/>
+        <field:input field="amount" id="c_com_maxhanchen_dao_po_FrontUser_amount" validationMessageCode="field_invalid_integer" z="bKDrqwGAoYQikLdqRrRRxvPY8Pc="/>
+        <field:textarea field="address" id="c_com_maxhanchen_dao_po_FrontUser_address" required="true" z="nxK4DVE02HswlE4+TdY4XmOlNNc="/>
+        <field:input field="roles" id="c_com_maxhanchen_dao_po_FrontUser_roles" z="oVNeItbUufP+IzGFNymflbiYdb8="/>
+        <field:input field="email" id="c_com_maxhanchen_dao_po_FrontUser_email" validationMessageCode="field_invalid_email" validationRegex="[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+" z="zVZXuBMOliu/uZhI/i2GRBvgBUs="/>
+        <field:input field="mobile" id="c_com_maxhanchen_dao_po_FrontUser_mobile" z="8OReh1+AaaYuUfTrFHjC/azHE6g="/>
+        <field:checkbox field="disabled" id="c_com_maxhanchen_dao_po_FrontUser_disabled" z="AmZpjgYXJEwaOMJ4zlmWmLm9YVg="/>
+        <field:datetime dateTimePattern="${frontUser_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_FrontUser_createTime" z="GZ3TzH6DBtCVGEAI1XtbG/45wh8="/>
+        <field:input field="createBy" id="c_com_maxhanchen_dao_po_FrontUser_createBy" z="f4bfkG0UVJZXXyOsstnSKwXso/g="/>
+        <field:datetime dateTimePattern="${frontUser_updatetime_date_format}" field="updateTime" id="c_com_maxhanchen_dao_po_FrontUser_updateTime" z="D5c80cMVEiPnAcjLUEdA0STeXxQ="/>
+        <field:input field="updateBy" id="c_com_maxhanchen_dao_po_FrontUser_updateBy" z="h7pU97oosh2VyPuXHJOp7hfRjno="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_maxhanchen_dao_po_FrontUser" render="${not empty dependencies}" z="qZqglX6jYB6NtWdReKhuWESa2fw="/>
+</div>

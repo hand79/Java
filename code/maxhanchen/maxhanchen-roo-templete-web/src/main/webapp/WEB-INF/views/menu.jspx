@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_embedded" z="LRTVSLfH1//iHuBP77kc72qGGb8=">
+            <menu:item id="i_embedded___embedgoogle_presentation_id" messageCode="global_generic" url="//embed/google_presentation" z="kB9rz/yi3S1sHy3URS9yMWGpkqI="/>
+            <menu:item id="i_embedded___embedscribd_document_id" messageCode="global_generic" url="//embed/scribd_document" z="LbR2wquxydDeW/R1pmfnUaxIEuk="/>
+            <menu:item id="i_embedded___embedslideshare_presentation_id" messageCode="global_generic" url="//embed/slideshare_presentation" z="FyJZBX8c18kHyH0IqayNHQlEBdM="/>
+            <menu:item id="i_embedded___embedyoutube_generic_id" messageCode="global_generic" url="//embed/youtube_generic" z="fSk/AEhIqN+xuYl1NBee3xz/zQA="/>
+            <menu:item id="i_embedded___embedgoogle_maps_id" messageCode="global_generic" url="//embed/google_maps" z="Z96lgV9WfBw9BFHEEdRejIjpw6Q="/>
+            <menu:item id="i_embedded___embedflickr_id" messageCode="global_generic" url="//embed/flickr" z="RBBNFjDJtUhVtSyipATAQ4PHujI="/>
+            <menu:item id="i_embedded___embedpicasa_id" messageCode="global_generic" url="//embed/picasa" z="SFT3h/XHUXe6Oo7/egqxjdE3NTw="/>
+            <menu:item id="i_embedded___embedlivestream_id" messageCode="global_generic" url="//embed/livestream" z="Bt47kyYj18zL30PvjixwHNFmdWY="/>
+            <menu:item id="i_embedded___embedustream_id" messageCode="global_generic" url="//embed/ustream" z="QIoMVVf4szXkEYngj6k7MBUdaPs="/>
+            <menu:item id="i_embedded___embedtwitter_id" messageCode="global_generic" url="//embed/twitter" z="uk/6shQ/Jz5WU1O6O9+evM+SCcM="/>
+            <menu:item id="i_embedded___embedgoogle_video_id" messageCode="global_generic" url="//embed/google_video" z="N2nyKgL5dbi5avbH13ZV9ZJAr8w="/>
+            <menu:item id="i_embedded___embedscreenr_id" messageCode="global_generic" url="//embed/screenr" z="+GoDlfAFsS2h3n9sXfwJXDmYw9Q="/>
+            <menu:item id="i_embedded___embedviddler_id" messageCode="global_generic" url="//embed/viddler" z="aPv07oxm2wFWKeEpIMmRieCylfc="/>
+            <menu:item id="i_embedded___embedvimeo_id" messageCode="global_generic" url="//embed/vimeo" z="GYR2A6O81ABDaa1VeY9LXD7emEA="/>
+            <menu:item id="i_embedded___embedyoutube_specific_id" messageCode="global_generic" url="//embed/youtube_specific" z="Rjt/ChE911yoPAeFMXtTG3ibEFU="/>
+        </menu:category>
+    </menu:menu>
+</div>

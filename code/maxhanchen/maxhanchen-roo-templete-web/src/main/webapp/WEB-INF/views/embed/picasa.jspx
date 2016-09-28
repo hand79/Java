@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Picasa">
+        <embed:photos albumId="5361850989779114785" id="photos_stsmedia_5361850989779114785" provider="picasa" userId="stsmedia" z="fh6/FYo723qwoWVgAEMbGZ+S1X4="/>
+    </util:panel>
+</div>

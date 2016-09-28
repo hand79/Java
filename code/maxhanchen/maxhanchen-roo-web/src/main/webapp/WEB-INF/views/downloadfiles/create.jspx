@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_maxhanchen_dao_po_DownLoadFile" modelAttribute="downLoadFile" path="/downloadfiles" render="${empty dependencies}" z="Gru8S7RYg3Z6U3qEKjKLRdJXezU=">
+        <field:input field="filename" id="c_com_maxhanchen_dao_po_DownLoadFile_filename" required="true" z="Dg8ha4VtbKz4RNCF3VZY6w8hSk4="/>
+        <field:input field="contentType" id="c_com_maxhanchen_dao_po_DownLoadFile_contentType" required="true" z="vHEtwfrUq+nc5LaIS2EMYr8Nj1k="/>
+        <field:input field="content" id="c_com_maxhanchen_dao_po_DownLoadFile_content" required="true" z="g/Kojfxhr+a2mehLMuqjI0oMiWQ="/>
+        <field:datetime dateTimePattern="${downLoadFile_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_DownLoadFile_createTime" z="fLzJEe8z2aWzJRZGPS+Ws0YWV/E="/>
+        <field:input field="createBy" id="c_com_maxhanchen_dao_po_DownLoadFile_createBy" z="MSFukJjR2g/uy7BUcTVJsW3VL40="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_maxhanchen_dao_po_DownLoadFile" render="${not empty dependencies}" z="8rVxXTGyAQS80cLbB5s3BBccbwM="/>
+</div>

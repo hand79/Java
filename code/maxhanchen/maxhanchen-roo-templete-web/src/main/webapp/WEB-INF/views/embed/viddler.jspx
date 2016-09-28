@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Viddler">
+        <embed:video id="video_34a0a068" provider="viddler" videoId="34a0a068" z="LxJpEPBxB8b3mQ7YdIz8+IWJ8cI="/>
+    </util:panel>
+</div>

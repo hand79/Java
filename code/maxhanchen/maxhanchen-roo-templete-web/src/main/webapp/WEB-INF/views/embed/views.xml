@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="/embed/google_presentation">
+        <put-attribute name="body" value="/WEB-INF/views//embed/google_presentation.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/scribd_document">
+        <put-attribute name="body" value="/WEB-INF/views//embed/scribd_document.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/slideshare_presentation">
+        <put-attribute name="body" value="/WEB-INF/views//embed/slideshare_presentation.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/youtube_generic">
+        <put-attribute name="body" value="/WEB-INF/views//embed/youtube_generic.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/google_maps">
+        <put-attribute name="body" value="/WEB-INF/views//embed/google_maps.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/flickr">
+        <put-attribute name="body" value="/WEB-INF/views//embed/flickr.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/picasa">
+        <put-attribute name="body" value="/WEB-INF/views//embed/picasa.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/livestream">
+        <put-attribute name="body" value="/WEB-INF/views//embed/livestream.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/ustream">
+        <put-attribute name="body" value="/WEB-INF/views//embed/ustream.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/twitter">
+        <put-attribute name="body" value="/WEB-INF/views//embed/twitter.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/google_video">
+        <put-attribute name="body" value="/WEB-INF/views//embed/google_video.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/screenr">
+        <put-attribute name="body" value="/WEB-INF/views//embed/screenr.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/viddler">
+        <put-attribute name="body" value="/WEB-INF/views//embed/viddler.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/vimeo">
+        <put-attribute name="body" value="/WEB-INF/views//embed/vimeo.jspx"/>
+    </definition>
+<definition extends="default" name="/embed/youtube_specific">
+        <put-attribute name="body" value="/WEB-INF/views//embed/youtube_specific.jspx"/>
+    </definition>
+</tiles-definitions>

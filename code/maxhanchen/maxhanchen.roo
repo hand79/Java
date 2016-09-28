@@ -1,0 +1,131 @@
+project --topLevelPackage com.maxhanchen --packaging POM --java 7
+
+module create --packaging jar --moduleName maxhanchen-dao --topLevelPackage com.maxhanchen.dao --java 7
+jpa setup --provider HIBERNATE --database POSTGRES --jndiDataSource --persistenceUnit
+database properties list
+database properties set --key database.url --value "jdbc:postgresql://localhost/maxhanchendb"
+database properties set --key database.username --value maxhanchen
+database properties set --key database.password --value maxhanchen
+database properties list
+logging setup --level INFO
+
+entity jpa --class ~.po.DownLoadFile --table DownLoad_files --testAutomatically  
+field string filename --column file_name --notNull
+field string contentType --column content_type --notNull
+// content need to change byte [] by hand 
+// adjust(Entity Class, Entity Class)
+// add @Lob 
+// add @Basic(fetch = FetchType.LAZY)
+field other --fieldName content --type java.lang.Byte --notNull 
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+
+entity jpa --class ~.po.Role --table Roles --permitReservedWords
+field string --fieldName role --notNull --sizeMax 50 --permitReservedWords
+
+entity jpa --class ~.po.User --table Users --permitReservedWords --sequenceName s_pk-users --testAutomatically
+field string username --column user_name --notNull --unique
+field string password --notNull
+field string role --permitReservedWords
+field string email --regexp "[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+"
+field string mobile
+field boolean disabled
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+
+finder add --finderName findUsersByUsernameEquals
+finder add --finderName findUsersByRoleLike
+service type --interface ~.service.UserService --entity ~.po.User
+
+entity jpa --class ~.po.FrontUser --table Front_users --permitReservedWords --sequenceName s_pk-front-users --testAutomatically
+field string username --column user_name --notNull --unique
+field string password --notNull
+field number amount --type java.lang.Integer
+field string --fieldName address --sizeMax 200 --notNull
+field string roles
+field string email --regexp "[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+"
+field string mobile
+field boolean disabled
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+
+finder add --finderName findFrontUsersByUsernameEquals
+finder add --finderName findFrontUsersByRolesLike
+service type --interface ~.service.FrontUserService --entity ~.po.FrontUser
+
+entity jpa --class ~.po.BackUser --table Back_users --permitReservedWords --sequenceName s_pk-back-users --testAutomatically
+field string username --column user_name --notNull --unique
+field string password --notNull
+field number amount --type java.lang.Integer
+field string roles
+field string email --regexp "[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+"
+field string mobile
+field boolean disabled
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+
+finder add --finderName findBackUsersByUsernameEquals
+finder add --finderName findBackUsersByRolesLike
+service type --interface ~.service.FrontUserService --entity ~.po.BackUser
+
+// roo-manager-web
+module focus --moduleName ~
+module create --packaging war --moduleName maxhanchen-roo-web --topLevelPackage com.maxhanchen.roo --java 7
+web mvc setup
+web mvc all --package ~.controller
+logging setup --level INFO
+security setup
+
+// roo-templete-web
+module focus --moduleName ~
+module create --packaging war --moduleName maxhanchen-roo-templete-web --topLevelPackage com.maxhanchen.templete.roo --java 7
+web mvc setup
+web mvc embed document --provider GOOGLE_PRESENTATION --documentId 0AcgEqD3JotEpZGQ4cmY4dDlfMzFjOWYyZmNnZA --viewName Google_Presentation
+web mvc embed document --provider SCRIBD --documentId 27766735 --viewName Scribd_Document
+web mvc embed document --provider SLIDESHARE --documentId springone2gxslidesstefanschmidt-100120044009-phpapp01 --viewName Slideshare_Presentation
+web mvc embed generic --url http://www.youtube.com/watch?v=Gb1Z0lfl52I --viewName YouTube_Generic
+web mvc embed map --location "8-20 Napier St, North Sydney, Australia" --viewName Google_Maps
+web mvc embed photos --provider FLIKR --userId 21936447@N04 --albumId siefken  --viewName Flickr
+web mvc embed photos --provider PICASA --userId stsmedia --albumId 5361850989779114785 --viewName Picasa
+web mvc embed stream video --provider LIVESTREAM --streamId winradio101 --viewName Livestream
+web mvc embed stream video --provider USTREAM --streamId 4424524 --viewName Ustream
+web mvc embed twitter --searchTerm "Spring Roo" --viewName Twitter
+web mvc embed video --provider GOOGLE_VIDEO --videoId 1753096859715615067 --viewName Google_Video
+web mvc embed video --provider SCREENR --videoId DOOs --viewName Screenr
+web mvc embed video --provider VIDDLER --videoId 34a0a068 --viewName Viddler
+web mvc embed video --provider VIMEO --videoId 11890173 --viewName Vimeo
+web mvc embed video --provider YOUTUBE --videoId Gb1Z0lfl52I --viewName YouTube_Specific
+web mvc all --package ~.controller
+logging setup --level INFO
+security setup
+
+// backend
+module focus --moduleName ~
+module create --packaging war --moduleName maxhanchen-back-end --topLevelPackage com.maxhanchen.backend --java 7
+web mvc setup
+logging setup --level INFO
+security setup
+
+// frontend
+module focus --moduleName ~
+module create --packaging war --moduleName maxhanchen-front-end --topLevelPackage com.maxhanchen.frontend --java 7
+web mvc setup
+logging setup --level INFO
+security setup
+
+// batch
+module focus --moduleName ~
+module create --packaging war --moduleName maxhanchen-batch --topLevelPackage com.maxhanchen.batch --java 7
+logging setup --level INFO
+
+module focus --moduleName ~
+module create --packaging jar --moduleName maxhanchen-core --topLevelPackage com.maxhanchen.core --java 7
+email sender setup --hostServer 127.0.0.1
+
+quit

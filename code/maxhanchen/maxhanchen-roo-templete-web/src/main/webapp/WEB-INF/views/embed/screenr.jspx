@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Screenr">
+        <embed:video id="video_DOOs" provider="screenr" videoId="DOOs" z="HMud9w08T5C0Siq9xZGcudx3Buo="/>
+    </util:panel>
+</div>

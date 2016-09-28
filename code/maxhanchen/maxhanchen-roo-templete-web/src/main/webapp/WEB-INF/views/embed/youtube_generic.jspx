@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Youtube Generic">
+        <embed:video id="video_Gb1Z0lfl52I" provider="youtube" videoId="Gb1Z0lfl52I" z="j4akmqbDHAUJQ/Gdv9bdZqI6xpw="/>
+    </util:panel>
+</div>

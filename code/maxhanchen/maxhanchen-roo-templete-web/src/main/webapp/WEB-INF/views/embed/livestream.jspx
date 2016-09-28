@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Livestream">
+        <embed:videostream id="video_stream_winradio101" provider="livestream" streamId="winradio101" z="2Z5/Qov1gteYvd4MD9o75McZPx8="/>
+    </util:panel>
+</div>

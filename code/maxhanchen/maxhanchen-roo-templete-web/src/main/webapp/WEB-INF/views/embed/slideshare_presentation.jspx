@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Slideshare Presentation">
+        <embed:document documentId="springone2gxslidesstefanschmidt-100120044009-phpapp01" id="doc_springone2gxslidesstefanschmidt-100120044009-phpapp01" provider="slideshare" z="Xa01bduOPX5HcQ7iby/6S++f7eU="/>
+    </util:panel>
+</div>

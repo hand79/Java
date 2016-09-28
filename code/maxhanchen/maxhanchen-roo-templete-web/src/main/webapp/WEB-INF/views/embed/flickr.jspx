@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Flickr">
+        <embed:photos albumId="siefken" id="photos_21936447@N04_siefken" provider="flikr" userId="21936447@N04" z="uetaaaYp+LUhy7K5UXQimi0ZX2o="/>
+    </util:panel>
+</div>

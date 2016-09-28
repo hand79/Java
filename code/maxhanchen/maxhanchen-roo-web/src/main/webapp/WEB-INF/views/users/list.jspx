@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_maxhanchen_dao_po_User" items="${users}" z="Ijc/llI5S8T0kbR6bS6GSR3OXB4=">
+        <table:table data="${users}" id="l_com_maxhanchen_dao_po_User" path="/users" z="BdRcqQQcf7yMaJtiHM95ydTmupU=">
+            <table:column id="c_com_maxhanchen_dao_po_User_username" property="username" z="tys2Xpt1dskuazfIiz7KfVPVhOY="/>
+            <table:column id="c_com_maxhanchen_dao_po_User_password" property="password" z="PJ44wJYtA4Nae1oziiqfX0WZzG8="/>
+            <table:column id="c_com_maxhanchen_dao_po_User_role" property="role" z="h5c6WMslSLci8u5cp9VCuK9CVXc="/>
+            <table:column id="c_com_maxhanchen_dao_po_User_email" property="email" z="JgXyYcIvWkzZlzs7FN+SkIbQE5M="/>
+            <table:column id="c_com_maxhanchen_dao_po_User_mobile" property="mobile" z="juWDwble4jO9/oAC+YTFttwXWhg="/>
+            <table:column id="c_com_maxhanchen_dao_po_User_disabled" property="disabled" z="DCpd7esHaniIE0aBNgss4ejGJJM="/>
+        </table:table>
+    </page:list>
+</div>

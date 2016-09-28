@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_maxhanchen_dao_po_User" modelAttribute="user" path="/users" versionField="Version" z="YMjBe2VhqH1vjBc+4SPp5lZrSN4=">
+        <field:input field="username" id="c_com_maxhanchen_dao_po_User_username" required="true" z="HTN7r3xNVuwyzgtr25JGZBbovC4="/>
+        <field:input field="password" id="c_com_maxhanchen_dao_po_User_password" required="true" z="nMv1mrUeVyfqmxTSZtgVEaAQE1I="/>
+        <field:input field="role" id="c_com_maxhanchen_dao_po_User_role" z="nQzsle1chwZnTWcnJ5XtYz16nCs="/>
+        <field:input field="email" id="c_com_maxhanchen_dao_po_User_email" validationMessageCode="field_invalid_email" validationRegex="[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+" z="KDKIavYt2zkXNrYDOG1qUnmngHk="/>
+        <field:input field="mobile" id="c_com_maxhanchen_dao_po_User_mobile" z="XMFbZNawBb8TxAiP4XgVuN4Qf8c="/>
+        <field:checkbox field="disabled" id="c_com_maxhanchen_dao_po_User_disabled" z="c39X7/bu1dG/E7hChHpx7UMaXXI="/>
+        <field:datetime dateTimePattern="${user_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_User_createTime" z="NPCoYwzrv1HS60CVqvmt2/wrY/k="/>
+        <field:input field="createBy" id="c_com_maxhanchen_dao_po_User_createBy" z="Tmx5wD7o1Z6IMo2I1CiNUjkuJow="/>
+        <field:datetime dateTimePattern="${user_updatetime_date_format}" field="updateTime" id="c_com_maxhanchen_dao_po_User_updateTime" z="41jEMsNJsr4NYy3u3hafw1gNIYc="/>
+        <field:input field="updateBy" id="c_com_maxhanchen_dao_po_User_updateBy" z="x36Z8ET6/OGvzFHGrgdUD79MlfU="/>
+    </form:update>
+</div>

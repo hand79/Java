@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_maxhanchen_dao_po_BackUser" modelAttribute="backUser" path="/backusers" versionField="Version" z="nQLrorIzGI8NwWJ6NlQlCIc1dZ8=">
+        <field:input field="username" id="c_com_maxhanchen_dao_po_BackUser_username" required="true" z="lM70b7SYg0nk1L57Vlb87+9v308="/>
+        <field:input field="password" id="c_com_maxhanchen_dao_po_BackUser_password" required="true" z="RU2jrO03Ls6u5av9tuRRsFVLrCs="/>
+        <field:input field="amount" id="c_com_maxhanchen_dao_po_BackUser_amount" validationMessageCode="field_invalid_integer" z="Rp0ckax08tqY2m+P4x7mYnxh0+4="/>
+        <field:input field="roles" id="c_com_maxhanchen_dao_po_BackUser_roles" z="abnoLT2SfYgY6xckxIf9XJwP494="/>
+        <field:input field="email" id="c_com_maxhanchen_dao_po_BackUser_email" validationMessageCode="field_invalid_email" validationRegex="[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+" z="+Y3Kisc19B5rvWE6EVFGGTDd5Dg="/>
+        <field:input field="mobile" id="c_com_maxhanchen_dao_po_BackUser_mobile" z="E/A/3PrYwvJTbVbm4QpxYX9GVpA="/>
+        <field:checkbox field="disabled" id="c_com_maxhanchen_dao_po_BackUser_disabled" z="LypNL7e3M/BgBTTYrNWFtrTukv0="/>
+        <field:datetime dateTimePattern="${backUser_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_BackUser_createTime" z="uYmf4WKF1hx+QzQO6YQTcNlQcBw="/>
+        <field:input field="createBy" id="c_com_maxhanchen_dao_po_BackUser_createBy" z="sYHmcrBdgvOVfpV7EzTY4gLDo/s="/>
+        <field:datetime dateTimePattern="${backUser_updatetime_date_format}" field="updateTime" id="c_com_maxhanchen_dao_po_BackUser_updateTime" z="9NRjldBXD9WAEO8wDs0up1wy+WE="/>
+        <field:input field="updateBy" id="c_com_maxhanchen_dao_po_BackUser_updateBy" z="Obi7LXrhvAsnSH+oVktf9wSKmbg="/>
+    </form:update>
+</div>

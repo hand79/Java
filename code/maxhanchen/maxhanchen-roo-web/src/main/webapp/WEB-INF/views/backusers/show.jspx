@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_maxhanchen_dao_po_BackUser" object="${backuser}" path="/backusers" z="f4xzAma8rvi+wAatvU0gbnPE3YQ=">
+        <field:display field="username" id="s_com_maxhanchen_dao_po_BackUser_username" object="${backuser}" z="b4wBPWIrL4yyqkZ684jwNZctoWI="/>
+        <field:display field="password" id="s_com_maxhanchen_dao_po_BackUser_password" object="${backuser}" z="mqzuiXdgPgDi4jDZumfAjIWwagM="/>
+        <field:display field="amount" id="s_com_maxhanchen_dao_po_BackUser_amount" object="${backuser}" z="1r80IN8Meulf2kCFv40PuEXQBgY="/>
+        <field:display field="roles" id="s_com_maxhanchen_dao_po_BackUser_roles" object="${backuser}" z="FM7qeAKZ2mrstj3D1OX8dO53EiI="/>
+        <field:display field="email" id="s_com_maxhanchen_dao_po_BackUser_email" object="${backuser}" z="J2mPM6hom8dB90/8LYh51DW37BI="/>
+        <field:display field="mobile" id="s_com_maxhanchen_dao_po_BackUser_mobile" object="${backuser}" z="Ajfm410yGLv8ejzWStpzMpAQaeU="/>
+        <field:display field="disabled" id="s_com_maxhanchen_dao_po_BackUser_disabled" object="${backuser}" z="lowy54vSZwF636YwQsHee7GBMXg="/>
+        <field:display date="true" dateTimePattern="${backUser_createtime_date_format}" field="createTime" id="s_com_maxhanchen_dao_po_BackUser_createTime" object="${backuser}" z="1gjdRqWgwH7JFcmW1lHiO8RUYNU="/>
+        <field:display field="createBy" id="s_com_maxhanchen_dao_po_BackUser_createBy" object="${backuser}" z="linl9oK3Y0mBV6JrdcZkYXcKhUs="/>
+        <field:display date="true" dateTimePattern="${backUser_updatetime_date_format}" field="updateTime" id="s_com_maxhanchen_dao_po_BackUser_updateTime" object="${backuser}" z="iw/8ACfWF196MWY3jw2vqtze7Y4="/>
+        <field:display field="updateBy" id="s_com_maxhanchen_dao_po_BackUser_updateBy" object="${backuser}" z="/CWc5RkuUXwG/QvenJDit7HhuWo="/>
+    </page:show>
+</div>

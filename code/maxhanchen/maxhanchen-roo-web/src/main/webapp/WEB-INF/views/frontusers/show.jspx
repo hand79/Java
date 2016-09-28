@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_maxhanchen_dao_po_FrontUser" object="${frontuser}" path="/frontusers" z="eeBx+7EvoKRVb/asvl6txm1cKSk=">
+        <field:display field="username" id="s_com_maxhanchen_dao_po_FrontUser_username" object="${frontuser}" z="ByM1FyIhS7Bgx2+9sOlqM+jKRGo="/>
+        <field:display field="password" id="s_com_maxhanchen_dao_po_FrontUser_password" object="${frontuser}" z="9NgyRSIIFvB28f/0WFuDsdqD84I="/>
+        <field:display field="amount" id="s_com_maxhanchen_dao_po_FrontUser_amount" object="${frontuser}" z="BeN8WsbAXJShVbL4z0/yz4u7t1A="/>
+        <field:display field="address" id="s_com_maxhanchen_dao_po_FrontUser_address" object="${frontuser}" z="LZ/9wVaYR5pFi7G0kqrCjrJH2nw="/>
+        <field:display field="roles" id="s_com_maxhanchen_dao_po_FrontUser_roles" object="${frontuser}" z="c8N+TxGn/wiatZsUNjfjb9wlPsw="/>
+        <field:display field="email" id="s_com_maxhanchen_dao_po_FrontUser_email" object="${frontuser}" z="bmzru761+mVpZxcQU+m5jHXDqC4="/>
+        <field:display field="mobile" id="s_com_maxhanchen_dao_po_FrontUser_mobile" object="${frontuser}" z="VIQlTQ/XAsg+frFlHQh4Q/+3okQ="/>
+        <field:display field="disabled" id="s_com_maxhanchen_dao_po_FrontUser_disabled" object="${frontuser}" z="+glDWAlhPT6+cZqkZ+1ONR9I2P4="/>
+        <field:display date="true" dateTimePattern="${frontUser_createtime_date_format}" field="createTime" id="s_com_maxhanchen_dao_po_FrontUser_createTime" object="${frontuser}" z="QpHr9aUr2HBEC3nC0TqmSYC45pw="/>
+        <field:display field="createBy" id="s_com_maxhanchen_dao_po_FrontUser_createBy" object="${frontuser}" z="fL+rYTdJs2mKZt60UxRTC3kilUM="/>
+        <field:display date="true" dateTimePattern="${frontUser_updatetime_date_format}" field="updateTime" id="s_com_maxhanchen_dao_po_FrontUser_updateTime" object="${frontuser}" z="A0wQIu4lIeULUxoC2162WXRSaIo="/>
+        <field:display field="updateBy" id="s_com_maxhanchen_dao_po_FrontUser_updateBy" object="${frontuser}" z="B5jDtojkgL23554kufh1E7Bz0FM="/>
+    </page:show>
+</div>

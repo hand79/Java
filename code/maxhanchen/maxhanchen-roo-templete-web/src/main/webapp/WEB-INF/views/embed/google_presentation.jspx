@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:embed="urn:jsptagdir:/WEB-INF/tags/embed" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <util:panel id="title" title="Google Presentation">
+        <embed:document documentId="0AcgEqD3JotEpZGQ4cmY4dDlfMzFjOWYyZmNnZA" id="doc_0AcgEqD3JotEpZGQ4cmY4dDlfMzFjOWYyZmNnZA" provider="google_presentation" z="wyDSQKrSiBavuSIec3DFodroTzc="/>
+    </util:panel>
+</div>

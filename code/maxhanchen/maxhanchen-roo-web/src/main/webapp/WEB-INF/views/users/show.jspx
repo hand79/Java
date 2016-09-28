@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_maxhanchen_dao_po_User" object="${user}" path="/users" z="Ez88bnlB2cF/SK27nCBRJTlZvX0=">
+        <field:display field="username" id="s_com_maxhanchen_dao_po_User_username" object="${user}" z="4KIU2kUrkRMIrRXigZwH9xUAE74="/>
+        <field:display field="password" id="s_com_maxhanchen_dao_po_User_password" object="${user}" z="dqV3n6TzdnmxXbxrjHnFZtNnQog="/>
+        <field:display field="role" id="s_com_maxhanchen_dao_po_User_role" object="${user}" z="QA6zimDCA9bThNPUe68G35BQujI="/>
+        <field:display field="email" id="s_com_maxhanchen_dao_po_User_email" object="${user}" z="IEW2DfHK7A9Tecr9z60NXsNPmkU="/>
+        <field:display field="mobile" id="s_com_maxhanchen_dao_po_User_mobile" object="${user}" z="K72PCXKohznEi9D82+6MDVdCsgQ="/>
+        <field:display field="disabled" id="s_com_maxhanchen_dao_po_User_disabled" object="${user}" z="z+0gyd+1FyqhvhWgcTcRh95zJ6w="/>
+        <field:display date="true" dateTimePattern="${user_createtime_date_format}" field="createTime" id="s_com_maxhanchen_dao_po_User_createTime" object="${user}" z="ZDtn+IfrPRYdiI9tNvXSBJbYp9o="/>
+        <field:display field="createBy" id="s_com_maxhanchen_dao_po_User_createBy" object="${user}" z="ls/ghvBPGF9RjUoQaUTEo4R570Y="/>
+        <field:display date="true" dateTimePattern="${user_updatetime_date_format}" field="updateTime" id="s_com_maxhanchen_dao_po_User_updateTime" object="${user}" z="mSzq+qjFy9xwKy9mvIKkGkoUmQU="/>
+        <field:display field="updateBy" id="s_com_maxhanchen_dao_po_User_updateBy" object="${user}" z="M7mNc5kxGMqTXIoCtk7c5lk2/dE="/>
+    </page:show>
+</div>

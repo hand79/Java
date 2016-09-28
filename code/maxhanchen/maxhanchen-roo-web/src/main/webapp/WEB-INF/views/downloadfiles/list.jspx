@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_maxhanchen_dao_po_DownLoadFile" items="${downloadfiles}" z="R8XVnk4Xf/i4Pq/npUtBqEj3SP0=">
+        <table:table data="${downloadfiles}" id="l_com_maxhanchen_dao_po_DownLoadFile" path="/downloadfiles" z="LMZZZvLg6CrTU2di0ZU74WH23BU=">
+            <table:column id="c_com_maxhanchen_dao_po_DownLoadFile_filename" property="filename" z="1GDzzu72METL5iJt42hoAGVB6E0="/>
+            <table:column id="c_com_maxhanchen_dao_po_DownLoadFile_contentType" property="contentType" z="d8T7vek0zgX/jENrBPCo5epnzMA="/>
+            <table:column id="c_com_maxhanchen_dao_po_DownLoadFile_content" property="content" z="IW+slSh4kclRnCQG+j6epJp0QsA="/>
+            <table:column date="true" dateTimePattern="${downLoadFile_createtime_date_format}" id="c_com_maxhanchen_dao_po_DownLoadFile_createTime" property="createTime" z="07KLRAcp7wFgGzSZcP1jZP+nkso="/>
+            <table:column id="c_com_maxhanchen_dao_po_DownLoadFile_createBy" property="createBy" z="un38dR0s8p9f4uH4K36/Uv+CQL4="/>
+        </table:table>
+    </page:list>
+</div>
