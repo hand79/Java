@@ -1,7 +1,8 @@
 # Java
 
 # spring roo
-code/maaxhanchen
+- code
+file path: code/maaxhanchen
 
 # doc 
 doc
