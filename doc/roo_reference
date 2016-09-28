@@ -1,0 +1,15 @@
+1. open roo shell
+2. script -file maxhanchen.roo
+3. clear pom (some dependency and configure need to fix by hand)
+comment:
+you want parent pom's dependencies and plugins, to comment below:
+---------------------------------------
+<!--     <dependencyManagement> -->
+...
+<!--     </dependencyManagement> -->
+
+<!--     <pluginManagement> -->
+....
+<!--     </pluginManagement> -->
+---------------------------------------
+

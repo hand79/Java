@@ -1,0 +1,9 @@
+-- by embedded Tomcat for tomcat7-maven-plugin(version:2.2)
+mvn tomcat7:run
+
+-- tomcat run
+mvn -Dmaven.tomcat.port=8081 tomcat:run
+
+-- use jetty run
+mvn -Djetty.port=9090 jetty:run
+

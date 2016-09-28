@@ -1,6 +1,6 @@
-// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 15:47:21
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 18:41:17
 project --topLevelPackage com.maxhanchen --packaging POM --java 7
-module create --packaging jar --moduleName maxhanchen-dao --topLevelPackage com.maxhanchen.dao --java 7
+module create --topLevelPackage com.maxhanchen --packaging jar --moduleName maxhanchen-dao --java 7 --parent com.maxhanchen:maxhanchen:1.0
 jpa setup --provider HIBERNATE --database POSTGRES --jndiDataSource --persistenceUnit
 database properties list
 database properties set --key database.url --value "jdbc:postgresql://localhost/maxhanchendb"
@@ -8,15 +8,19 @@ database properties set --key database.username --value maxhanchen
 database properties set --key database.password --value maxhanchen
 database properties list
 logging setup --level INFO
-entity jpa --class ~.po.DownLoadFile --table DownLoad_files --testAutomatically  
+enum type --class ~.dao.Action --permitReservedWords
+enum constant --name A
+enum constant --name U
+enum constant --name D
+entity jpa --class ~.dao.po.DownLoadFile --table DownLoad_files --testAutomatically  
 field string filename --column file_name --notNull
 field string contentType --column content_type --notNull
 field other --fieldName content --type java.lang.Byte --notNull 
 field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
 field string createBy --column create_by
-entity jpa --class ~.po.Role --table Roles --permitReservedWords
+entity jpa --class ~.dao.po.Role --table Roles --permitReservedWords
 field string --fieldName role --notNull --sizeMax 50 --permitReservedWords
-entity jpa --class ~.po.User --table Users --permitReservedWords --sequenceName s_pk-users --testAutomatically
+entity jpa --class ~.dao.po.User --table Users --permitReservedWords --sequenceName s_pk-users --testAutomatically
 field string username --column user_name --notNull --unique
 field string password --notNull
 field string role --permitReservedWords
@@ -30,7 +34,7 @@ field string updateBy --column update_by
 finder add --finderName findUsersByUsernameEquals
 finder add --finderName findUsersByRoleLike
 service type --interface ~.service.UserService --entity ~.po.User
-entity jpa --class ~.po.FrontUser --table Front_users --permitReservedWords --sequenceName s_pk-front-users --testAutomatically
+entity jpa --class ~.dao.po.FrontUser --table Front_users --permitReservedWords --sequenceName s_pk-front-users --testAutomatically
 field string username --column user_name --notNull --unique
 field string password --notNull
 field number amount --type java.lang.Integer
@@ -46,7 +50,7 @@ field string updateBy --column update_by
 finder add --finderName findFrontUsersByUsernameEquals
 finder add --finderName findFrontUsersByRolesLike
 service type --interface ~.service.FrontUserService --entity ~.po.FrontUser
-entity jpa --class ~.po.BackUser --table Back_users --permitReservedWords --sequenceName s_pk-back-users --testAutomatically
+entity jpa --class ~.dao.po.BackUser --table Back_users --permitReservedWords --sequenceName s_pk-back-users --testAutomatically
 field string username --column user_name --notNull --unique
 field string password --notNull
 field number amount --type java.lang.Integer
@@ -61,14 +65,16 @@ field string updateBy --column update_by
 finder add --finderName findBackUsersByUsernameEquals
 finder add --finderName findBackUsersByRolesLike
 service type --interface ~.service.FrontUserService --entity ~.po.BackUser
-module focus --moduleName ~
-module create --packaging war --moduleName maxhanchen-roo-web --topLevelPackage com.maxhanchen.roo --java 7
+module focus --moduleName ~ 
+module create --packaging war --moduleName maxhanchen-roo-web --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
 web mvc setup
 web mvc all --package ~.controller
 logging setup --level INFO
 security setup
 module focus --moduleName ~
-module create --packaging war --moduleName maxhanchen-roo-templete-web --topLevelPackage com.maxhanchen.templete.roo --java 7
+module create --packaging war --moduleName maxhanchen-roo-templete-web --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
 web mvc setup
 web mvc embed document --provider GOOGLE_PRESENTATION --documentId 0AcgEqD3JotEpZGQ4cmY4dDlfMzFjOWYyZmNnZA --viewName Google_Presentation
 web mvc embed document --provider SCRIBD --documentId 27766735 --viewName Scribd_Document
@@ -89,23 +95,36 @@ web mvc all --package ~.controller
 logging setup --level INFO
 security setup
 module focus --moduleName ~
-module create --packaging war --moduleName maxhanchen-back-end --topLevelPackage com.maxhanchen.backend --java 7
+module create --packaging war --moduleName maxhanchen-back-end --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
+web mvc setup
+logging setup --level INFO
+security setup
+module focus --moduleName ~ 
+module create --packaging war --moduleName maxhanchen-front-end --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
 web mvc setup
 logging setup --level INFO
 security setup
 module focus --moduleName ~
-module create --packaging war --moduleName maxhanchen-front-end --topLevelPackage com.maxhanchen.frontend --java 7
+module create --packaging war --moduleName maxhanchen-batch --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
 web mvc setup
 logging setup --level INFO
-security setup
 module focus --moduleName ~
-module create --packaging war --moduleName maxhanchen-batch --topLevelPackage com.maxhanchen.batch --java 7
-logging setup --level INFO
-module focus --moduleName ~
-module create --packaging jar --moduleName maxhanchen-core --topLevelPackage com.maxhanchen.core --java 7
+module create --packaging jar --moduleName maxhanchen-core --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
 email sender setup --hostServer 127.0.0.1
 quit
-// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 15:47:54
-// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 15:47:54
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 18:41:47
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 18:41:47
 // script --file maxhanchen.roo
-// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 15:47:54
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 18:41:47
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 18:43:42
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 18:44:10
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 21:09:44
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 21:58:34
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 22:01:04
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 22:05:40
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 22:06:32
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 23:41:44
