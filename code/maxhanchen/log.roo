@@ -128,3 +128,147 @@ exit
 // Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-28 22:05:40
 // Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 22:06:32
 // Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-09-28 23:41:44
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-09-29 00:18:56
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 13:23:57
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 13:27:59
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:10:02
+module focus --moduleName maxhanchen-dao 
+// [failed] service type --interface ~.dao.service.FrontUserService --entity ~.dao.po.BackUser
+service type --interface ~.dao.service.UserService --entity ~.dao.po.User
+service type --interface ~.dao.service.FrontUserService --entity ~.dao.po.FrontUser
+service type --interface ~.dao.service.BackUserService --entity ~.dao.po.BackUser
+module focus --moduleName maxhanchen-roo-web 
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:28:39
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:28:44
+module focus --moduleName maxhanchen-dao
+entity jpa --class ~.dao.po.Product --table Products --sequenceName s_pk-products --testAutomatically
+field string productName --column product_name --notNull
+field number prudctID --column product_id --type java.math.Long --notNull
+field number price --type java.math.Long --notNull
+field number total --type java.math.Long --notNull
+field string company --sizeMax 400
+field string unifiedBusinessNo --column unified_business_no --sizeMax 400
+field string description --sizeMax 400
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.ProductService --entity ~.dao.po.Product
+entity jpa --class ~.dao.po.Order --table Orders --permitReservedWords --sequenceName s_pk-orders --testAutomatically
+field number orderID --column order_id --type java.math.Long --notNull
+field string orderName --column order_name --sizeMax 1000
+field string message --sizeMax 1000
+field reference username --type ~.dao.po.FrontUser --joinColumnName user_name --referencedColumnName user_name --notNull
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.OrderService --entity ~.dao.po.Order
+field set Products --type ~.dao.po.Product --class ~.dao.po.Order --mappedBy Order --cardinality ONE_TO_MANY --fetch LAZY
+module focus --moduleName maxhanchen-roo-web
+web mvc all --package ~.roo.web.controller
+quit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:29:11
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:29:11
+// script --file test.txt
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:29:11
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:32:45
+module focus --moduleName maxhanchen-dao 
+module focus --moduleName maxhanchen-dao
+entity jpa --class ~.dao.po.Product --table Products --sequenceName s_pk-products --testAutomatically
+field string productName --column product_name --notNull
+field number prudctID --column product_id --type java.lang.Long --notNull
+field number price --type java.lang.Long --notNull
+field number total --type java.lang.Long --notNull
+field string company --sizeMax 400
+field string unifiedBusinessNo --column unified_business_no --sizeMax 400
+field string description --sizeMax 400
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.ProductService --entity ~.dao.po.Product
+entity jpa --class ~.dao.po.Order --table Orders --permitReservedWords --sequenceName s_pk-orders --testAutomatically
+field number orderID --column order_id --type java.lang.Long --notNull
+field string orderName --column order_name --sizeMax 1000
+field string message --sizeMax 1000
+field reference username --type ~.dao.po.FrontUser --joinColumnName user_name --referencedColumnName user_name --notNull
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.OrderService --entity ~.dao.po.Order
+field set Products --type ~.dao.po.Product --class ~.dao.po.Order --mappedBy Order --cardinality ONE_TO_MANY --fetch LAZY
+module focus --moduleName maxhanchen-roo-web
+web mvc all --package ~.roo.web.controller
+quit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:35:32
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:35:32
+// script --file test.txt
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:35:32
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 22:38:07
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 22:38:50
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:17:47
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:37:58
+module focus --moduleName maxhanchen-dao
+entity jpa --class ~.dao.po.Product --table Products --sequenceName s_pk-products --testAutomatically
+field string productName --column product_name --notNull
+field number prudctID --column product_id --type java.lang.Long --notNull
+field number price --type java.lang.Long --notNull
+field number total --type java.lang.Long --notNull
+field string company --sizeMax 400
+field string unifiedBusinessNo --column unified_business_no --sizeMax 400
+field string description --sizeMax 400
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.ProductService --entity ~.dao.po.Product
+entity jpa --class ~.dao.po.Order --table Orders --permitReservedWords --sequenceName s_pk-orders --testAutomatically
+field number orderID --column order_id --type java.lang.Long --notNull
+field string orderName --column order_name --sizeMax 1000
+field string message --sizeMax 1000
+field reference username --type ~.dao.po.FrontUser --joinColumnName user_name --referencedColumnName user_name --notNull
+field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string createBy --column create_by
+field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+field string updateBy --column update_by
+service type --interface ~.dao.service.OrderService --entity ~.dao.po.Order
+module focus --moduleName maxhanchen-roo-web
+// [failed] web mvc all --package ~.roo.web.controller
+// [failed] script --file roo_update_script.txt
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:39:43
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:40:24
+// [failed] script --file script 
+module focus --moduleName maxhanchen-dao
+// [failed] entity jpa --class ~.dao.po.Product --table Products --sequenceName s_pk-products --testAutomatically
+// [failed] script --file roo_update_script.txt
+module focus --moduleName maxhanchen-dao
+module focus --moduleName maxhanchen-roo-web
+// [failed] web mvc all --package ~.roo.web.controller
+// [failed] script --file roo_update_script.txt
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:43:37
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:45:10
+// [failed] script --file roo_update_script.txt
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:46:21
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:46:30
+exit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:46:46
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:47:07
+module focus --moduleName maxhanchen-dao
+module focus --moduleName ~ 
+module create --packaging war --moduleName maxhanchen-roo-web --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
+web mvc setup
+web mvc all --package ~.roo.web.controller
+logging setup --level INFO
+security setup
+quit
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:47:32
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2016-10-02 23:47:32
+// script --file roo_update_script.txt
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2016-10-02 23:47:32

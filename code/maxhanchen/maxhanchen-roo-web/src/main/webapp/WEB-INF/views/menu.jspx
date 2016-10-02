@@ -7,17 +7,25 @@
             <menu:item id="i_user_new" messageCode="global_menu_new" url="/users?form" z="Zv1m8u2rG+JFKcvJ+AHVVK0ey24="/>
             <menu:item id="i_user_list" messageCode="global_menu_list" url="/users?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4MY4uybxa60Q1G2rlI5bOwg+sm0="/>
         </menu:category>
-        <menu:category id="c_frontuser" z="x12O7eANMvWjg7gkcfmYc2/miuM=">
-            <menu:item id="i_frontuser_new" messageCode="global_menu_new" url="/frontusers?form" z="DjNig7bP7iRpKCafKAIusaYr6P4="/>
-            <menu:item id="i_frontuser_list" messageCode="global_menu_list" url="/frontusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="pqcu45VJ0tSHECIM/fWxAAymr3o="/>
+        <menu:category id="c_role" z="LPygIx2EuEArCzqsfpQQev0lHyc=">
+            <menu:item id="i_role_new" messageCode="global_menu_new" url="/roles?form" z="WNB2HvnzvtbOA3r7qL1gqrUOq8g="/>
+            <menu:item id="i_role_list" messageCode="global_menu_list" url="/roles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DVFtqj4xcHbEiJh6bgI7Tyre3ec="/>
         </menu:category>
         <menu:category id="c_backuser" z="FXuuanPliJocLic3VKzgrrPPNwM=">
             <menu:item id="i_backuser_new" messageCode="global_menu_new" url="/backusers?form" z="/D48YcC2RolY6AppJ28hbYXqWvU="/>
             <menu:item id="i_backuser_list" messageCode="global_menu_list" url="/backusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="u28sAaSY4z8uhkFGmXHzz1HX1/Y="/>
         </menu:category>
-        <menu:category id="c_role" z="LPygIx2EuEArCzqsfpQQev0lHyc=">
-            <menu:item id="i_role_new" messageCode="global_menu_new" url="/roles?form" z="WNB2HvnzvtbOA3r7qL1gqrUOq8g="/>
-            <menu:item id="i_role_list" messageCode="global_menu_list" url="/roles?page=1&amp;size=${empty param.size ? 10 : param.size}" z="DVFtqj4xcHbEiJh6bgI7Tyre3ec="/>
+        <menu:category id="c_product" z="vJ6efqiSxFssuvqFTsXpvZ3AvA8=">
+            <menu:item id="i_product_new" messageCode="global_menu_new" url="/products?form" z="Ezf8cTW61d2RkMNEcYkDJpG01kc="/>
+            <menu:item id="i_product_list" messageCode="global_menu_list" url="/products?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kEeyCmUUYXShbDEWwOLheaAkM50="/>
+        </menu:category>
+        <menu:category id="c_frontuser" z="x12O7eANMvWjg7gkcfmYc2/miuM=">
+            <menu:item id="i_frontuser_new" messageCode="global_menu_new" url="/frontusers?form" z="DjNig7bP7iRpKCafKAIusaYr6P4="/>
+            <menu:item id="i_frontuser_list" messageCode="global_menu_list" url="/frontusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="pqcu45VJ0tSHECIM/fWxAAymr3o="/>
+        </menu:category>
+        <menu:category id="c_order" z="DMSr2AlxRHEQCAkmRnnjt3RDnsM=">
+            <menu:item id="i_order_new" messageCode="global_menu_new" url="/orders?form" z="HMoM+4/m3h1QgIvBetk1yPWNRrE="/>
+            <menu:item id="i_order_list" messageCode="global_menu_list" url="/orders?page=1&amp;size=${empty param.size ? 10 : param.size}" z="n7p5vcljroIqmYedxF2+3ZmawhY="/>
         </menu:category>
         <menu:category id="c_downloadfile" z="DONm0Dbl99CX8khhCEucZheTi1c=">
             <menu:item id="i_downloadfile_new" messageCode="global_menu_new" url="/downloadfiles?form" z="zyA9gTrF8owLAe0YWdfrvPSFAMs="/>

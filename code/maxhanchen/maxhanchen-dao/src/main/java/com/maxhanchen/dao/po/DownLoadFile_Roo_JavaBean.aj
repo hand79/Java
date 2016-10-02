@@ -24,11 +24,11 @@ privileged aspect DownLoadFile_Roo_JavaBean {
         this.contentType = contentType;
     }
     
-    public Byte DownLoadFile.getContent() {
+    public Byte[] DownLoadFile.getContent() {
         return this.content;
     }
     
-    public void DownLoadFile.setContent(Byte content) {
+    public void DownLoadFile.setContent(Byte[] content) {
         this.content = content;
     }
     

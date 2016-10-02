@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_maxhanchen_dao_po_Product" items="${products}" z="HUR8TjjGdYbf3YomPxvw64kmvwo=">
+        <table:table data="${products}" id="l_com_maxhanchen_dao_po_Product" path="/products" z="4Y061F+aUg7dzRkO6bK3lCioVwo=">
+            <table:column id="c_com_maxhanchen_dao_po_Product_productName" property="productName" z="xzeKrFw9eh9HQFkOuuBKDF/8W88="/>
+            <table:column id="c_com_maxhanchen_dao_po_Product_prudctID" property="prudctID" z="rFiiFvZ1Q9sHaKMNowCB1CTzoDw="/>
+            <table:column id="c_com_maxhanchen_dao_po_Product_price" property="price" z="WaXYksZTGmy7IePlCh3MFBmv+OE="/>
+            <table:column id="c_com_maxhanchen_dao_po_Product_total" property="total" z="viKSy6XOSnWRQPjOH/hX7/enKsk="/>
+            <table:column id="c_com_maxhanchen_dao_po_Product_company" property="company" z="tUF7QzrGTWdMnO40yC8kq3e7sVc="/>
+            <table:column id="c_com_maxhanchen_dao_po_Product_unifiedBusinessNo" property="unifiedBusinessNo" z="dbblg2SvJqH0EhHKnapvwIgcd2M="/>
+        </table:table>
+    </page:list>
+</div>

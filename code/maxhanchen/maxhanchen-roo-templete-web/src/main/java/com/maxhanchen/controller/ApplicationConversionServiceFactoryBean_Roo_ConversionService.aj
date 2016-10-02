@@ -7,10 +7,15 @@ import com.maxhanchen.controller.ApplicationConversionServiceFactoryBean;
 import com.maxhanchen.dao.po.BackUser;
 import com.maxhanchen.dao.po.DownLoadFile;
 import com.maxhanchen.dao.po.FrontUser;
+import com.maxhanchen.dao.po.Order;
+import com.maxhanchen.dao.po.Product;
 import com.maxhanchen.dao.po.Role;
 import com.maxhanchen.dao.po.User;
-import com.maxhanchen.service.FrontUserService;
-import com.maxhanchen.service.UserService;
+import com.maxhanchen.dao.service.BackUserService;
+import com.maxhanchen.dao.service.FrontUserService;
+import com.maxhanchen.dao.service.OrderService;
+import com.maxhanchen.dao.service.ProductService;
+import com.maxhanchen.dao.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -21,7 +26,16 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
+    BackUserService ApplicationConversionServiceFactoryBean.backUserService;
+    
+    @Autowired
     FrontUserService ApplicationConversionServiceFactoryBean.frontUserService;
+    
+    @Autowired
+    OrderService ApplicationConversionServiceFactoryBean.orderService;
+    
+    @Autowired
+    ProductService ApplicationConversionServiceFactoryBean.productService;
     
     @Autowired
     UserService ApplicationConversionServiceFactoryBean.userService;
@@ -37,7 +51,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, BackUser> ApplicationConversionServiceFactoryBean.getIdToBackUserConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.maxhanchen.dao.po.BackUser>() {
             public com.maxhanchen.dao.po.BackUser convert(java.lang.Long id) {
-                return BackUser.findBackUser(id);
+                return backUserService.findBackUser(id);
             }
         };
     }
@@ -53,7 +67,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<DownLoadFile, String> ApplicationConversionServiceFactoryBean.getDownLoadFileToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.maxhanchen.dao.po.DownLoadFile, java.lang.String>() {
             public String convert(DownLoadFile downLoadFile) {
-                return new StringBuilder().append(downLoadFile.getFilename()).append(' ').append(downLoadFile.getContentType()).append(' ').append(downLoadFile.getContent()).append(' ').append(downLoadFile.getCreateTime()).toString();
+                return new StringBuilder().append(downLoadFile.getFilename()).append(' ').append(downLoadFile.getContentType()).append(' ').append(downLoadFile.getCreateTime()).append(' ').append(downLoadFile.getCreateBy()).toString();
             }
         };
     }
@@ -94,6 +108,54 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.maxhanchen.dao.po.FrontUser>() {
             public com.maxhanchen.dao.po.FrontUser convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), FrontUser.class);
+            }
+        };
+    }
+    
+    public Converter<Order, String> ApplicationConversionServiceFactoryBean.getOrderToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.maxhanchen.dao.po.Order, java.lang.String>() {
+            public String convert(Order order) {
+                return new StringBuilder().append(order.getOrderID()).append(' ').append(order.getOrderName()).append(' ').append(order.getMessage()).append(' ').append(order.getCreateTime()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Order> ApplicationConversionServiceFactoryBean.getIdToOrderConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.maxhanchen.dao.po.Order>() {
+            public com.maxhanchen.dao.po.Order convert(java.lang.Long id) {
+                return orderService.findOrder(id);
+            }
+        };
+    }
+    
+    public Converter<String, Order> ApplicationConversionServiceFactoryBean.getStringToOrderConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.maxhanchen.dao.po.Order>() {
+            public com.maxhanchen.dao.po.Order convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Order.class);
+            }
+        };
+    }
+    
+    public Converter<Product, String> ApplicationConversionServiceFactoryBean.getProductToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.maxhanchen.dao.po.Product, java.lang.String>() {
+            public String convert(Product product) {
+                return new StringBuilder().append(product.getProductName()).append(' ').append(product.getPrudctID()).append(' ').append(product.getPrice()).append(' ').append(product.getTotal()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Product> ApplicationConversionServiceFactoryBean.getIdToProductConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.maxhanchen.dao.po.Product>() {
+            public com.maxhanchen.dao.po.Product convert(java.lang.Long id) {
+                return productService.findProduct(id);
+            }
+        };
+    }
+    
+    public Converter<String, Product> ApplicationConversionServiceFactoryBean.getStringToProductConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.maxhanchen.dao.po.Product>() {
+            public com.maxhanchen.dao.po.Product convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Product.class);
             }
         };
     }
@@ -156,6 +218,12 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getFrontUserToStringConverter());
         registry.addConverter(getIdToFrontUserConverter());
         registry.addConverter(getStringToFrontUserConverter());
+        registry.addConverter(getOrderToStringConverter());
+        registry.addConverter(getIdToOrderConverter());
+        registry.addConverter(getStringToOrderConverter());
+        registry.addConverter(getProductToStringConverter());
+        registry.addConverter(getIdToProductConverter());
+        registry.addConverter(getStringToProductConverter());
         registry.addConverter(getRoleToStringConverter());
         registry.addConverter(getIdToRoleConverter());
         registry.addConverter(getStringToRoleConverter());

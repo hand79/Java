@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_maxhanchen_dao_po_Order" modelAttribute="order" path="/orders" versionField="Version" z="U2fsRXNNJR6MZmdtxad0FbcXYKc=">
+        <field:input field="orderID" id="c_com_maxhanchen_dao_po_Order_orderID" required="true" validationMessageCode="field_invalid_integer" z="kUGYhrz4y+oQMnGFbGvZLLIS8u8="/>
+        <field:textarea field="orderName" id="c_com_maxhanchen_dao_po_Order_orderName" z="ZiCeQrY8JS7D1U9U4iYaU9irFUE="/>
+        <field:textarea field="message" id="c_com_maxhanchen_dao_po_Order_message" z="LSkjtsqA0ouD38zFidqrawuk/Vg="/>
+        <field:select field="username" id="c_com_maxhanchen_dao_po_Order_username" itemValue="id" items="${frontusers}" path="/frontusers" required="true" z="snKm6qcW+K9gMj7xiZ5UEfvsrVw="/>
+        <field:datetime dateTimePattern="${order_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_Order_createTime" z="SfvwPBMJ9L9FYHIE8bYYFXUe1oU="/>
+        <field:input field="createBy" id="c_com_maxhanchen_dao_po_Order_createBy" z="aSGvgwK8GeQwgyIrXQiPpUKDW5Y="/>
+        <field:datetime dateTimePattern="${order_updatetime_date_format}" field="updateTime" id="c_com_maxhanchen_dao_po_Order_updateTime" z="c9qT748UeIl8Go+LIZLXSr0ozl8="/>
+        <field:input field="updateBy" id="c_com_maxhanchen_dao_po_Order_updateBy" z="Vgceb+CsPpuKxMDfHRJbCR7YhX0="/>
+    </form:update>
+</div>

@@ -5,7 +5,7 @@
     <form:create id="fc_com_maxhanchen_dao_po_DownLoadFile" modelAttribute="downLoadFile" path="/downloadfiles" render="${empty dependencies}" z="Gru8S7RYg3Z6U3qEKjKLRdJXezU=">
         <field:input field="filename" id="c_com_maxhanchen_dao_po_DownLoadFile_filename" required="true" z="Dg8ha4VtbKz4RNCF3VZY6w8hSk4="/>
         <field:input field="contentType" id="c_com_maxhanchen_dao_po_DownLoadFile_contentType" required="true" z="vHEtwfrUq+nc5LaIS2EMYr8Nj1k="/>
-        <field:input field="content" id="c_com_maxhanchen_dao_po_DownLoadFile_content" required="true" z="g/Kojfxhr+a2mehLMuqjI0oMiWQ="/>
+        <field:textarea field="content" id="c_com_maxhanchen_dao_po_DownLoadFile_content" required="true" z="R4xzC2WkVKJJ/sHMorQt/ckoHB4="/>
         <field:datetime dateTimePattern="${downLoadFile_createtime_date_format}" field="createTime" id="c_com_maxhanchen_dao_po_DownLoadFile_createTime" z="fLzJEe8z2aWzJRZGPS+Ws0YWV/E="/>
         <field:input field="createBy" id="c_com_maxhanchen_dao_po_DownLoadFile_createBy" z="MSFukJjR2g/uy7BUcTVJsW3VL40="/>
     </form:create>

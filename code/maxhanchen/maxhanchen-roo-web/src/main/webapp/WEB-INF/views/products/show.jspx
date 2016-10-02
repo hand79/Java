@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_maxhanchen_dao_po_Product" object="${product}" path="/products" z="+m80zFdKfsI/Fx0stJK9yUQ2b5k=">
+        <field:display field="productName" id="s_com_maxhanchen_dao_po_Product_productName" object="${product}" z="kXneZzV/gaX2yt6GkI/cP0yZLcg="/>
+        <field:display field="prudctID" id="s_com_maxhanchen_dao_po_Product_prudctID" object="${product}" z="r/6QQ+3fdxgG1SJGuI1DW5eCe3M="/>
+        <field:display field="price" id="s_com_maxhanchen_dao_po_Product_price" object="${product}" z="pLae8PsqwEDjWUzQTmJCFwWKuZQ="/>
+        <field:display field="total" id="s_com_maxhanchen_dao_po_Product_total" object="${product}" z="cctmqd7k8vbZ8pO8AOJaijDBT8Y="/>
+        <field:display field="company" id="s_com_maxhanchen_dao_po_Product_company" object="${product}" z="ktSBob3YIHPiQHqW8KrHi2k1Z8Y="/>
+        <field:display field="unifiedBusinessNo" id="s_com_maxhanchen_dao_po_Product_unifiedBusinessNo" object="${product}" z="CNlP5XIy61jnJ9ZefjdvbbQ0TKM="/>
+        <field:display field="description" id="s_com_maxhanchen_dao_po_Product_description" object="${product}" z="k5++8o0EioypjMBWDBUQI1x8L6Y="/>
+        <field:display date="true" dateTimePattern="${product_createtime_date_format}" field="createTime" id="s_com_maxhanchen_dao_po_Product_createTime" object="${product}" z="tkXuMh+Vfv5LT4NzDWILpz+/ugc="/>
+        <field:display field="createBy" id="s_com_maxhanchen_dao_po_Product_createBy" object="${product}" z="sDkXb6qzoGEhtOfflEsftTUNJbQ="/>
+        <field:display date="true" dateTimePattern="${product_updatetime_date_format}" field="updateTime" id="s_com_maxhanchen_dao_po_Product_updateTime" object="${product}" z="thx56oL62R8dye4ZtZl/yXF4eUE="/>
+        <field:display field="updateBy" id="s_com_maxhanchen_dao_po_Product_updateBy" object="${product}" z="6iivB3K2fTX0AYDLTFknv8hQBbw="/>
+    </page:show>
+</div>

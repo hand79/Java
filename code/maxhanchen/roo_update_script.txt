@@ -1,0 +1,44 @@
+// module focus --moduleName [project_name]
+// module focus --moduleName maxhanchen-dao
+ 
+//entity jpa --class ~.dao.po.Product --table Products --sequenceName s_pk-products --testAutomatically
+//field string productName --column product_name --notNull
+//field number prudctID --column product_id --type java.lang.Long --notNull
+//field number price --type java.lang.Long --notNull
+//field number total --type java.lang.Long --notNull
+//field string company --sizeMax 400
+//field string unifiedBusinessNo --column unified_business_no --sizeMax 400
+//field string description --sizeMax 400
+//field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+//field string createBy --column create_by
+//field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+//field string updateBy --column update_by
+//
+//service type --interface ~.dao.service.ProductService --entity ~.dao.po.Product
+//
+//entity jpa --class ~.dao.po.Order --table Orders --permitReservedWords --sequenceName s_pk-orders --testAutomatically
+//field number orderID --column order_id --type java.lang.Long --notNull
+//field string orderName --column order_name --sizeMax 1000
+//field string message --sizeMax 1000
+//field reference username --type ~.dao.po.FrontUser --joinColumnName user_name --referencedColumnName user_name --notNull
+//field date createTime --column create_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+//field string createBy --column create_by
+//field date updateTime --column update_time --type java.util.Date --dateTimeFormatPattern "yyyy-MM-dd HH:mm:ss" --persistenceType JPA_TIMESTAMP
+//field string updateBy --column update_by
+
+//service type --interface ~.dao.service.OrderService --entity ~.dao.po.Order
+
+//ONE_TO_MANY fields >> have issure
+//field set Products --type ~.dao.po.Product --class ~.dao.po.Order --mappedBy Order --cardinality ONE_TO_MANY --fetch LAZY
+
+
+module focus --moduleName ~ 
+module create --packaging war --moduleName maxhanchen-roo-web --topLevelPackage com.maxhanchen --java 7 --parent com.maxhanchen:maxhanchen:1.0
+dependency add --groupId com.maxhanchen --artifactId maxhanchen-dao --version 1.0
+web mvc setup
+web mvc all --package ~.roo.web.controller
+logging setup --level INFO
+security setup
+
+//quit
+quit

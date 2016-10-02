@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_maxhanchen_dao_po_Order" items="${orders}" z="bNzV2EB/NpBkwWc8CsC5GjJfXoo=">
+        <table:table data="${orders}" id="l_com_maxhanchen_dao_po_Order" path="/orders" z="xCuafT1QBJlJJQyEXwHs8zpMX1A=">
+            <table:column id="c_com_maxhanchen_dao_po_Order_orderID" property="orderID" z="Y0vcyRr6Jnem7ngy1MRYQTYcgek="/>
+            <table:column id="c_com_maxhanchen_dao_po_Order_orderName" property="orderName" z="CnsfN7dS6AI+waeTf7DyaYw/liw="/>
+            <table:column id="c_com_maxhanchen_dao_po_Order_message" property="message" z="u6YySUy/CuTYtFduF1wObCJ8Fqw="/>
+            <table:column id="c_com_maxhanchen_dao_po_Order_username" property="username" z="oJdhLe5Csc6Uez4mCk2LNz1v6Ss="/>
+            <table:column date="true" dateTimePattern="${order_createtime_date_format}" id="c_com_maxhanchen_dao_po_Order_createTime" property="createTime" z="Bey1kl2QkHQaUzMY1cTf2bglnr4="/>
+            <table:column id="c_com_maxhanchen_dao_po_Order_createBy" property="createBy" z="28hDn0825HThmLlDHqWKT/2b8SA="/>
+        </table:table>
+    </page:list>
+</div>

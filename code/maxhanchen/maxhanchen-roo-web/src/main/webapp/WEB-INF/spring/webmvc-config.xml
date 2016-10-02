@@ -73,5 +73,5 @@
       </list>
     </property>
   </bean>
-<bean class="com.maxhanchen.controller.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
+<bean class="com.maxhanchen.roo.web.controller.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
 </beans>
