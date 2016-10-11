@@ -1,0 +1,62 @@
+......
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+
+......
+
+@Configuration
+@EnableWebMvcSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	@Autowired
+	DataSource dataSource;
+	
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+    	//TODO
+    	auth.jdbcAuthentication().dataSource(dataSource)
+    	.passwordEncoder(new ShaPasswordEncoder(256))
+    	.usersByUsernameQuery("select user_name, password, enabled from oct_user where user_name=?")
+    	.authoritiesByUsernameQuery("select user_name, role from oct_role where user_name=?");
+    }
+    
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+    	web.ignoring().antMatchers("/resources/**");
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+    	http.authorizeRequests()
+    			.antMatchers("/loginPage/**").permitAll()
+    			.antMatchers("/logout/**").permitAll()
+    			.antMatchers("/login/**").permitAll()
+    			.antMatchers("/offerCode/**","/data/**").access("hasRole('ROLE_ADMIN')")
+    			.antMatchers("/index").access("hasRole('ROLE_ADMIN')")
+    			.antMatchers("/**").access("isAuthenticated()")
+    			.anyRequest().authenticated()
+    		.and()
+    			.exceptionHandling().accessDeniedPage("/access_denied")
+            .and()
+            	.formLogin()
+            	.usernameParameter("j_username") // xml default is not the same
+            	.passwordParameter("j_password") // xml default is not the same
+            	.loginPage("/loginPage")
+            	.loginProcessingUrl("/j_spring_security_check") // xml default is not the same
+            	.defaultSuccessUrl("/index", true)
+            	.failureUrl("/login?error=true")
+            .and()
+            	.logout().logoutUrl("/logout");
+    
+    }
+    
+    
+}
