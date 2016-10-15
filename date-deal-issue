@@ -1,0 +1,25 @@
+-- 簡潔處理取得每月最後一日最後一刻的時間--
+import org.apache.commons.lang3.time.DateUtils; << 需要這個
+
+public void method_1() {
+		Calendar cal = Calendar.getInstance();
+		Date date = cal.getTime();
+		date = DateUtils.truncate(date, Calendar.MONTH);
+   	date = DateUtils.addMonths(date, 1);
+		date = DateUtils.addMilliseconds(date, -1);
+		System.out.println(date);
+}
+
+註:
+DateUtils.addMonths << 這個方法在一些情境下會導致預想的結果不一樣
+ex: 要取得每個月的最後一天的最後一刻
+2016-07-31 23:59:59>>用DateUtils.addMonths 加一個月，DateUtils.addMilliseconds 減一毫秒>> 2016-08-31 23:59:59 >> 正確
+2016-08-31 23:59:59>>用DateUtils.addMonths 加一個月， DateUtils.addMilliseconds 減一毫秒>> 2016-09-30 23:59:59 >> 正確
+
+2016-09-30 23:59:59>>用DateUtils.addMonths 加一個月， DateUtils.addMilliseconds 減一毫秒>> 2016-10-30 23:59:59 >> 不正確，預想結果2016-10-31 23:59:59
+
+簡易處理方法(如上面 method):
+1. 取得當月一日
+2. 加一個月
+3. 減一毫秒或一秒
+
