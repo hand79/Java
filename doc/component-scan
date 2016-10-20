@@ -13,7 +13,24 @@ ex:
 --------------------------------------------------------------------------------------------------------------
 <context:component-scan> IOC 容器掃描
 1. base-package 指定一個基本掃描package包含其子包所有類別，需掃描多個可用","作分隔。
-2. resource-pattern:用來過濾特定的類別。
-3. <context:include-filter> : 子節點要"包含"的目標組件
+2. resource-pattern:用來過濾特定的類別 
+ex:(resource-pattern = "/po/*.class"﹐com.maxhanchen底下的po子包下面的class過濾掉)。
+3. <context:include-filter> : 子節點要"包含"的目標組件，需與<context:component-scan>中的屬性use-default-filters="false"搭配使用
 4. <context:exclude-filter> : 子節點要"排除"的目標組件
+常用排除:
+<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+<context:exclude-filter expression="org.springframework.stereotype.Respository" type="annotation"/>
+<context:exclude-filter expression="org.springframework.stereotype.Service" type="annotation"/>
+<context:exclude-filter expression="org.springframework.stereotype.Component" type="annotation"/>
+
+-- 最常見的type --
+annotation:  org.example.SomeAnnotation 符合SomeAnnoation的target class
+assignable:  org.example.SomeClass 指定class或interface的全名
+-----
+aspectj:  org.example..*Service+ AspectJ语法
+regex: org.example.Default.* Regelar Expression
+custom: org.example.MyTypeFilter Spring3新增自定义Type，org.springframework.core.type.TypeFilter
+
 5. <context:component-scan> 這個底下能包含若干<context:include-filter> 和 <context:exclude-filter>的子節點
+
+
