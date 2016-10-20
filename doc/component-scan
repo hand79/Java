@@ -41,3 +41,4 @@ default設置下:
 註:若允許不被設置，可以在注解的屬性添加 required 屬性為false
 若在默認狀況下，IOC容器中有多個兼容型的Bean存在時，通過類型的自動裝配會有問題，此時可用@Qualifier裡面使用指定的Bean名稱做注入的動作
 
+註解: Spring 泛型依赖注入(spring 4.x 以上)
