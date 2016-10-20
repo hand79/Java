@@ -1,0 +1,18 @@
+<!--  <context:property-placeholder location="classpath*:META-INF/spring/*.properties"/> -->
+
+ <context:property-placeholder properties-ref="chtProps" />
+ 
+  <bean id = "chtProps" class = "org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name = "locations">
+            <list>
+                <value>classpath*:META-INF/spring/location/*_#{systemProperties['PROFILE']}.properties</value>
+                <value>classpath*:META-INF/spring/*.properties</value>
+            </list>
+        </property>
+  </bean>
+	<context:spring-configured/>
+
+
+	<context:component-scan base-package="com.maxhanchen">
+		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+	</context:component-scan>
