@@ -32,5 +32,12 @@ regex: org.example.Default.* Regelar Expression
 custom: org.example.MyTypeFilter Spring3新增自定义Type，org.springframework.core.type.TypeFilter
 
 5. <context:component-scan> 這個底下能包含若干<context:include-filter> 和 <context:exclude-filter>的子節點
+6. <context:component-scan> 具有自動注冊 AutowiredAnnotaionBeanPostProcessor的instance (這是一種Bean後至處理器)，他可以自動裝配具有
+@Autowired , @Resource , @Inject注解的屬性
 
+@Autowired: 注解自動裝配具有兼容性類型的單個Bean屬性
+default設置下:
+所有使用@Autowired注解的屬性都需要被設置，當Spring找不到匹配的Bean時會拋出異常。
+註:若允許不被設置，可以在注解的屬性添加 required 屬性為false
+若在默認狀況下，IOC容器中有多個兼容型的Bean存在時，通過類型的自動裝配會有問題，此時可用@Qualifier裡面使用指定的Bean名稱做注入的動作
 
