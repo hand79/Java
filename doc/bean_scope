@@ -1,0 +1,5 @@
+singletion: default scope, IOC容器初始時創建instance,在整個生命周期只創建一個,單例的。
+prototype: 原型的, IOC容器初始時"不"創建instance,每次請求時創建新的Bean instance。
+session: Scopes a bean defintion to an HTTP session. Only valid when used with a web-capanle Spring context(such as with Spring MVC).
+requet: Scopes a bean defintion to an HTTP request. Only valid when used with a web-capanle Spring context(such as with Spring MVC).
+global-session: Scopes a bean defintion to a global HTTP session. Only valid when used with a web-capanle Spring context(such as with Spring MVC).
