@@ -1,4 +1,4 @@
-@Componet 基本註解，標示受Spring管理的組件
+@Component 基本註解，標示受Spring管理的組件
 @Respository: 持久層組件
 @Service: 服務層組件
 @Controller: 標示表現層
