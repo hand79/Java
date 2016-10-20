@@ -1,6 +1,7 @@
 @Component 基本註解，標示受Spring管理的組件
 @Respository: 持久層組件
-@Service: 服務層組件@Controller: 標示表現層
+@Service: 服務層組件
+@Controller: 標示表現層
 
 對於掃描到的組件有默認命名的方式，使用非限定的類名，第一個字母為小寫，
 也可以通過注解方式透過value指定標示的組件名稱
