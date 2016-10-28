@@ -1,0 +1,20 @@
+-- 把時間轉成文字 ,利用轉換的日期做 group by
+select count(*),to_char(action_time,'YYYYMMDD') as tt from action_log where action_time >='2015-05-19 00:00:00' and action_time <'2015-05-20 00:00:00' and name like '%Get%' and result_code=0 group by tt; 
+select count(*),to_char(action_time,'YYYYMMDD') as tt from action_log_log where action_time >='2015-05-13 00:00:00' and action_time <'2015-05-19 00:00:00' and name like '%Get%' and result_code=0 group by tt; 
+
+-- postpaid api-addon every month
+SELECT date_trunc ('month',action_time), count(name) FROM action_log where result_code = 0 and action_time>='2016-01-01 00:00:00' and name='AddOffer' group by date_trunc ('month', action_time) order by date_trunc ('month',action_time); 
+
+-- prepaid  api-refill every month
+SELECT date_trunc ('month',action_time), count(name), name  FROM action_log where result_code = 0 and action_time>='2016-01-01 00:00:00' and name like 'Prepaid_RefillVoucher%' group by date_trunc ('month', action_time), name order by date_trunc ('month',action_time); 
+
+-- templete xx join
+select so.subscriber_id, o.cht_offer_id, so.product_id from subscriber_offer so inner join offer o on o.offer_id=so.offer_id and o.type in (3,4) where so.expiry_date_time > current_timestamp  except select subscriber_id, offer_id, product_id from import_log;
+
+reference:
+-- postgresql中文社區 
+http://www.postgres.cn/index.php/home
+ 
+-- 文檔
+http://www.postgres.cn/docs/9.3/
+http://twpug.net/docs/postgresql-doc-8.0-zh_TW/functions-datetime.html
