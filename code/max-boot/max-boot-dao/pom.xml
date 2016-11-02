@@ -5,7 +5,7 @@
 
 	<artifactId>max-boot-dao</artifactId>
 	<packaging>jar</packaging>
-
+	<version>${max.version}</version>
 	<name>max-boot-dao</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -62,6 +62,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.11.0</version>
 		</dependency>
 	</dependencies>
 </project>

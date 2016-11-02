@@ -15,6 +15,7 @@
 	<properties>
 		<deploy.path>D:\temp</deploy.path>
 		<skipTests>true</skipTests>
+		<max.version>1.0</max.version>
     </properties>
 	
 	<modules>
@@ -31,6 +32,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<profiles>
+						<profile>dev</profile>
+						<profile>prod</profile>
+						<profile>test</profile>	
+					</profiles>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

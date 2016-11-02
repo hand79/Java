@@ -5,7 +5,7 @@
 
 	<artifactId>max-boot-web</artifactId>
 	<packaging>war</packaging>
-
+	<version>1.0</version>
 	<name>max-boot-web</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -28,6 +28,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.max.boot</groupId>
+			<artifactId>max-boot-dao</artifactId>
+			<version>${max.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -88,7 +93,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
