@@ -5,7 +5,7 @@
 
 	<artifactId>max-boot-web</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<version>${max.web.version}</version>
 	<name>max-boot-web</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.max.boot</groupId>
 			<artifactId>max-boot-dao</artifactId>
-			<version>${max.version}</version>
+			<version>${max.dao.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -110,14 +110,13 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+<!-- 	<build> -->
+<!-- 		<plugins> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.springframework.boot</groupId> -->
+<!-- 				<artifactId>spring-boot-maven-plugin</artifactId> -->
+<!-- 			</plugin> -->
+<!-- 		</plugins> -->
+<!-- 	</build> -->
 
 </project>

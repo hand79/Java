@@ -5,7 +5,7 @@
 
 	<artifactId>max-boot-dao</artifactId>
 	<packaging>jar</packaging>
-	<version>${max.version}</version>
+	<version>${max.dao.version}</version>
 	<name>max-boot-dao</name>
 	<description>Demo project for Spring Boot</description>
 
