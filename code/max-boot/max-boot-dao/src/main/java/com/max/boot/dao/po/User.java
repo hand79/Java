@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
+@Entity(name="Users")
 public class User {
 
     @Id
@@ -29,8 +29,6 @@ public class User {
 
 	@Column(nullable = false)
 	private String password;
-
-	private String role;
 
 	private String email;
 
@@ -83,14 +81,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 
 	public String getEmail() {
@@ -149,11 +139,20 @@ public class User {
 		this.updateBy = updateBy;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role + ", email="
-				+ email + ", mobile=" + mobile + ", disabled=" + disabled + ", createTime=" + createTime + ", createBy="
-				+ createBy + ", updateTime=" + updateTime + ", updateBy=" + updateBy + "]";
+
+	public Set<Role> getRoles() {
+		return roles;
 	}
 
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", mobile="
+				+ mobile + ", disabled=" + disabled + ", createTime=" + createTime + ", createBy=" + createBy
+				+ ", updateTime=" + updateTime + ", updateBy=" + updateBy + ", roles=" + roles + "]";
+	}
+	
 }
