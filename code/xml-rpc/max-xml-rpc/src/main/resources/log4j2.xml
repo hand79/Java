@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+ 	<!-- level: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+	<!-- intLevel 0 > 100 > 200 > 300 > 400 > 500 > 600 > -->
+	<properties>
+		<!-- file output format -->
+		<property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level [%thread] %c [%L] -| %msg%n</property>
+		<!-- <property name="PATTERN">%d [%t] %-5p %c.%M(%L) - %m%n</property> -->
+		<property name="LOG_HOME">/logs/max-xml-rpc</property>
+        <property name="FILE_NAME">max-xml-rpc</property>
+	</properties>
+	
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATTERN}" />
+            <PatternLayout pattern="${PATTERN}" />
+        </Console>
+        <File name="FILE" fileName="${LOG_HOME}/${FILE_NAME}.log" immediateFlush="true" append="true">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </File>
+        <RollingRandomAccessFile
+        	name="MAX_XML_RPC" 
+            fileName="${LOG_HOME}/${FILE_NAME}.log" 
+            filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+   	  		<PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="50 MB" />
+            </Policies>
+            <!-- leave .gz file max -->
+            <DefaultRolloverStrategy max="30" />
+        </RollingRandomAccessFile>
+        
+    </Appenders>
+    
+    <logger name="com.max.xml.service" level="DEBUG"></logger>
+    <logger name="com.max.xml.servlet" level="DEBUG"></logger>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="FILE" />
+        </Root>
+    </Loggers>
+</Configuration>
