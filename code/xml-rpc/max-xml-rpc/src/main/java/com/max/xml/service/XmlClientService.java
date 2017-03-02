@@ -28,7 +28,7 @@ public class XmlClientService {
 	
 private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	private final String URI_BASE = "http://localhost:9090/";
+	private final String URI_BASE = "http://localhost:9090/max-xml-rpc/";
 	
 	// for obj's request
 	public BaseResponse call(BaseRequest req, String requestBy, String requestID) throws Exception {

@@ -19,6 +19,7 @@ import com.max.xml.core.bean.GetUserDetailRequest;
 import com.max.xml.core.bean.GetUserDetailResponse;
 import com.max.xml.core.bean.MethodCall;
 import com.max.xml.core.bean.MethodResponse;
+import com.max.xml.exception.Errors;
 
 @Service
 public class DispatchService {
@@ -84,8 +85,8 @@ public class DispatchService {
 	public GetUserDetailResponse doGetUserDetail(GetUserDetailRequest req) throws Exception {
 		GetUserDetailResponse res = new GetUserDetailResponse();
 		res.setResponseDateTime(new Date());
-		res.setResponseMessage("test res");
-		res.setResponseCode(new Integer(999));
+		res.setResponseMessage("test response OK");
+		res.setResponseCode(Errors.SUCCESS.ordinal());
 		return res;
 	}
 	

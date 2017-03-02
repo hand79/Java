@@ -32,6 +32,11 @@ private SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
 	@Test
 	public void contextLoads() throws Exception {
 //		this.call(getGetUserDetailRequest());
+	}
+	
+	@Test
+	public void testLog4j2() throws Exception {
+//		this.call(getGetUserDetailRequest());
 		log.info(" info ===send====");
 		log.debug(" debug ===send====");
 		log.error(" error ===send====");
@@ -40,9 +45,8 @@ private SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
 	}
 	
 	@Test
-	public void sendXml() throws Exception {
-//		this.call(getGetUserDetailRequest());
-		log.debug(this.call(getGetUserDetailRequest()).toString());
+	public void testSendXml() throws Exception {
+		this.call(getGetUserDetailRequest());
 	}
 	
 	public GetUserDetailRequest getGetUserDetailRequest(){

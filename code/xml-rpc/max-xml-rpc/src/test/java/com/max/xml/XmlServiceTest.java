@@ -28,7 +28,7 @@ import com.max.xml.core.bean.BaseRequest;
 public class XmlServiceTest {
 
 	protected Logger log = LoggerFactory.getLogger(this.getClass());
-	private static final String URI_BASE = "http://localhost:9090/";
+	private static final String URI_BASE = "http://localhost:9090/max-xml-rpc/";
 
 	protected HttpEntity call(BaseRequest req) throws Exception {
 		log.debug("()..." + System.getProperty("LOCATION"));
