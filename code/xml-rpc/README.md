@@ -1,13 +1,14 @@
 # xml rpc 
 
 ## Introduction
-use spring boot to demo xml-rpc (JAXB) to request for servlet and Resolve xml to transfer for API Call
+Use spring boot to demo xml-rpc (JAXB) to request for servlet and Resolve xml to transfer for API call
 
 Object Information:
 BaseRequest: Used to solve which API call.
 MethodCall:  Used to invoke API for doXXX method
 
-EX: GetUserDetail API
+EX: GetUserDetail API call
+req:
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <methodCall>
     <methodName>GetUserDetail</methodName>
