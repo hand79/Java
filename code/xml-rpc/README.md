@@ -2,6 +2,7 @@
 
 ## Introduction
 Use spring boot to demo xml-rpc (JAXB) to request for servlet and Resolve xml to transfer for API call
+Test Url: http://localhost:9090/max-xml-rpc/
 
 Object Information:
 BaseRequest: Used to solve which API call.
