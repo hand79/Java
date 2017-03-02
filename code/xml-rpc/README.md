@@ -8,7 +8,7 @@ Use spring boot to demo xml-rpc (JAXB) to request for servlet and Resolve xml to
 - BaseRequest: Used to solve which API call.
 - MethodCall:  Used to invoke API for doXXX method
 
-EX: GetUserDetail API call 
+EX: GetUserDetail API call <br>
 req:
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
