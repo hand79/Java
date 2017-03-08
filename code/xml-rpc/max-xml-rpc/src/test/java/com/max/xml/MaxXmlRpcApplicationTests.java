@@ -3,7 +3,9 @@ package com.max.xml;
 import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -16,8 +18,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.max.xml.core.bean.GetProductsResponse;
 import com.max.xml.core.bean.GetUserDetailRequest;
 import com.max.xml.core.bean.MethodCall;
+import com.max.xml.core.bean.Product;
 import com.max.xml.service.XmlClientService;
 
 @RunWith(SpringRunner.class)
@@ -47,6 +51,29 @@ private SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
 	@Test
 	public void testSendXml() throws Exception {
 		this.call(getGetUserDetailRequest());
+	}
+	
+	@Test
+	public void testGetProductsResponse() throws Exception {
+		List<Product> list = new ArrayList<>();
+		list.add(getProduct("Pikachu", "25", "13.2kg"));
+		list.add(getProduct("Raichuu", "26", "66.1kg"));
+		list.add(getProduct("Pichu", "172", "4.4kg"));
+		
+		GetProductsResponse res = new GetProductsResponse();
+		res.setResponseDateTime(new Date());
+		res.setResponseMessage("ok");
+		res.setResponseCode(new Integer(0));
+		res.setProductList(list);
+		System.out.println(this.marshal(res));
+	}
+	
+	private Product getProduct(String name, String productID, String description){
+		Product p = new Product();
+		p.setProductName(name);
+		p.setProductID(productID);
+		p.setDescription(description);;
+		return p;
 	}
 	
 	public GetUserDetailRequest getGetUserDetailRequest(){
