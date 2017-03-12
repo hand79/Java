@@ -1,0 +1,3 @@
+http://localhost:9090?to=user@gmail.com
+http://localhost:9090/async?to=user@gmail.com
+http://localhost:9090/async-spring?to=user@gmail.com
