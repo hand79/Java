@@ -1,5 +1,4 @@
-# Java
-
+# Java demo
 
 ## file path
 ###### pom module demo
