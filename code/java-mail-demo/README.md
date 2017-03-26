@@ -1,4 +1,4 @@
-# xml rpc 
+# Java Mail 
 
 ## Introduction
 - Demo how to use java mail send 
