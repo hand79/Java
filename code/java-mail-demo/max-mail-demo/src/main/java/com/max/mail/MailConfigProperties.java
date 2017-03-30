@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /*  Demo how to config properties */
 @Component
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class MailConfigProperties {
 
     @Value("${spring.mail.host}")
