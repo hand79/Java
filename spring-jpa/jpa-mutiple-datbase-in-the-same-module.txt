@@ -1,0 +1,178 @@
+Introduce:
+If your project need to do any action for multiple database at the same time.
+comment: If you don't want to do too many things. You can use spring roo to build the project.(Good tool!)
+
+As follows:
+project struct(maven):
+-src
+	-main 
+		-java
+	-main
+		-resources
+			-META-INF
+				-spring	
+					-applicationContext.xml <<<watch
+					-database.properties <<<watch
+			-persistence.xml  <<<<watch
+	-test
+		-java
+
+basic one database		
+------------------------------------------	
+applicationContext.xml as follows:
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+	<context:property-placeholder properties-ref="props" />
+	<bean id="props" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath*:META-INF/spring/*.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<context:spring-configured />
+	<context:component-scan base-package="com.ais">
+			<context:exclude-filter expression=".*_Roo_.*"	type="regex" />
+		<context:exclude-filter expression="org.springframework.stereotype.Controller"	type="annotation" />
+	</context:component-scan>
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" id="dataSource">
+		<property name="driverClassName" value="${database.driverClassName}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.username}" />
+		<property name="password" value="${database.password}" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="1800000" />
+		<property name="numTestsPerEvictionRun" value="3" />
+		<property name="minEvictableIdleTimeMillis" value="1800000" />
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"	id="transactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven mode="aspectj" transaction-manager="transactionManager" />
+	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+		<property name="persistenceUnitName" value="persistenceUnit" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+</beans>
+------------------------------------------
+database.properties as follows:
+
+database.url=jdbc:postgresql://localhost:5432/maxdb2
+database.username=max
+database.password=max
+database.driverClassName=org.postgresql.Driver
+------------------------------------------
+persistence.xml as follows (provider by hibernate):
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <!-- value="create" to build a new database on each run; value="update" to modify an existing database; value="create-drop" means the same as "create" but also drops tables when Hibernate closes; value="validate" makes no changes to the database -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <property name="hibernate.connection.charSet" value="UTF-8"/>
+            <!-- Uncomment the following two properties for JBoss only -->
+            <!-- property name="hibernate.validator.apply_to_ddl" value="false" /-->
+            <!-- property name="hibernate.validator.autoregister_listeners" value="false" /-->
+        </properties>
+    </persistence-unit>
+</persistence>
+------------------------------------------------------------------------------------
+@ comment:
+I suggest to config different modules. It is not clean in a module.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Mutiple database (oracle, postgres)
+------------------------------------------	
+applicationContext.xml as follows:
+	......
+	<tx:annotation-driven mode="aspectj" transaction-manager="transactionManager" />
+	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+		<property name="persistenceUnitName" value="persistenceUnit" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceXmlLocation"	value="classpath:META-INF/oracle-persistence.xml" /> <<< old one need to config 
+	</bean>
+	
+>>>	new add as follows:
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" id="oracleDataSource">
+		<property name="driverClassName" value="${database.oracle.driverClassName}" />
+		<property name="url" value="${database.oracle.url}" />
+		<property name="username" value="${database.oracle.username}" />
+		<property name="password" value="${database.oracle.password}" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="1800000" />
+		<property name="numTestsPerEvictionRun" value="3" />
+		<property name="minEvictableIdleTimeMillis" value="1800000" />
+	</bean>
+	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="oracleEntityManagerFactory">
+		<property name="persistenceUnitName" value="oracleUnit" />
+		<property name="dataSource" ref="oracleDataSource" />
+		<property name="persistenceXmlLocation"	value="classpath:META-INF/oracle-persistence.xml" /> <<<watch
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.JpaTransactionManager"	id="oracleTransactionManager">
+		<property name="entityManagerFactory" ref="oracleEntityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven mode="aspectj" transaction-manager="oracleTransactionManager" />
+	
+</beans>
+------------------------------------------
+database.properties as follows:
+.......(old )
+database.oracle.url=jdbc:oracle:thin:@localhost:1521:orcl
+database.oracle.username=max
+database.oracle.password=max
+database.oracle.driverClassName=oracle.jdbc.driver.OracleDriver
+------------------------------------------
+oracle-persistence.xml as follows (provider by hibernate):
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="oracleUnit" <<< Watch it. It is important.
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+		</properties>
+		<!-- Uncomment the following two properties for JBoss only -->
+        <!-- property name="hibernate.validator.apply_to_ddl" value="false" /-->
+        <!-- property name="hibernate.validator.autoregister_listeners" value="false" /-->
+	</persistence-unit>
+</persistence>
+------------------------------------------------------------------------------------
+Finish config, how to use as follows:
+// You need to use unitName. You will get exception if you don't name it.  
+@PersistenceContext(unitName="oracleUnit")
+EntityManager em;
+-----------------------
+
+Transaction Process in the two database as follows:
+find xx ->open transaction ->postgres-> close transaction-> find xx-> open transaction-> oracle -> close transaction->
+
+comment:It isn't good to use. If you do something to wait for long time, it affects performance.
+
+
