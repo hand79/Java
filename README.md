@@ -2,14 +2,17 @@
 
 ## file path
 ###### pom module demo
-spring roo: code/pom-module-demo/maxhanchen
-spring boot: code/pom-module-demo/max-boot
+path: code/pom-module-demo/maxhanchen (by spring roo)
+path: code/pom-module-demo/max-boot (by spring boot)
 
 ## xml rpc
-spring boot: code/xml-rpc (JAXB)
+path: code/xml-rpc (JAXB) (by spring boot)
 
 ## java mail(include async demo)
-spring boot: code/java-mail-demo
+path: code/java-mail-demo (by spring boot)
+
+## Apache Poi
+path: code/max-apache-demo
 
 ## spring batch
 - TODO
