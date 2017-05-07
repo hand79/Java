@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d [%t] %-5level %c %M-(%L) %msg%n" />
+		</Console>
+		<RollingFile name="FileAppender" fileName="./logs/max-apache-poi/max-apache-poi.log" filePattern="./logs/max-apache-poi/max-apache-poi-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout>
+				<pattern>%d [%t] %-5level %c %M-(%L) %msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy min="1" max="4" />
+		</RollingFile>
+	</appenders>
+	<loggers>
+		<root level="info">
+			<appender-ref ref="Console" />
+			<appender-ref ref="FileAppender" />
+		</root>
+		<logger name="com.max.poi" level="debug" />
+	</loggers>
+</configuration>
