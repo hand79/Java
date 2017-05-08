@@ -1,0 +1,2 @@
+ex:like查詢的邏輯與其他家關聯式資料庫不同，其資料內容會區分大小寫
+http://blog.csdn.net/huguangshanse00/article/details/8521008
