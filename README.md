@@ -1,21 +1,21 @@
-# Java demo
+# Java application demo
 
-## file path
-###### pom module demo
-path: code/pom-module-demo/maxhanchen (by spring roo)
-path: code/pom-module-demo/max-boot (by spring boot)
+- Pom Module demo
+  - Project path: code/pom-module-demo/maxhanchen (by spring roo)
+  - Project path: code/pom-module-demo/max-boot (by spring boot)
 
-## xml rpc
-path: code/xml-rpc (JAXB) (by spring boot)
+- XML RPC
+  - Project path: code/xml-rpc (JAXB) (by spring boot)
 
-## java mail(include async demo)
-path: code/java-mail-demo (by spring boot)
+- java mail(include async demo)
+  - Project path: code/java-mail-demo (by spring boot)
 
-## Apache Poi
-path: code/max-apache-demo
+- Apache Poi
+  - Project path: code/max-apache-demo
 
-## spring batch
-- TODO
+- Json Data Receiver Search
+  - Project path: code/max-app-demo
+  - Major used lib: Spring boot, Mongo, WatchService, Swagger
 
-## doc 
+# doc 
 Execute the focus on development documents
